@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-service',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceComponent implements OnInit {
 
-  constructor() { }
+  activeService: string;
+
+  constructor(private route: ActivatedRoute) {
+    route.params.subscribe(params => {
+      this.activeService = params['active'];
+    })
+  }
 
   ngOnInit() {
   }
