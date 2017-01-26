@@ -1,3 +1,4 @@
+import { servicesRouteConfig } from './components/services/services.route.cofing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +10,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ServicesComponent } from './components/services/services.component';
 import { HomeComponent } from './components/home/home.component';
+import { ServiceComponent } from './components/service/service.component';
 
 
 const emptyRoute: Route = {
@@ -37,10 +39,8 @@ const routeConfig: Routes = [
     path: 'contact',
     component: ContactComponent
   },
-  {
-    path: 'service',
-    component: ServicesComponent
-  },
+  ...servicesRouteConfig
+  ,
   emptyRoute,
   pnfRoute
 ];
@@ -51,7 +51,8 @@ const routeConfig: Routes = [
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    ServicesComponent
+    ServicesComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,

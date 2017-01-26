@@ -1,0 +1,13 @@
+.services {
+    display: block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    list-style: none;
+    float: left;
+}
+
+.services li {
+    display: inline-block;
+}
+
+.services li>a {}
