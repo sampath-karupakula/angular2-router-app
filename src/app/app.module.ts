@@ -2,13 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Route } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ServicesComponent } from './components/services/services.component';
 import { HomeComponent } from './components/home/home.component';
+
+
+const emptyRoute: Route = {
+  path: "",
+  redirectTo: "home",
+  pathMatch: "full"
+}
+
+const pnfRoute: Route = {
+  path: "**",
+  redirectTo: "home",
+  pathMatch: "full"
+}
 
 
 const routeConfig: Routes = [
@@ -28,6 +41,8 @@ const routeConfig: Routes = [
     path: 'service',
     component: ServicesComponent
   },
+  emptyRoute,
+  pnfRoute
 ];
 
 @NgModule({
